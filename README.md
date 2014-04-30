@@ -1,7 +1,7 @@
 ###Task 1
 ######Simple MIPS Assembly Program
 
-```mips
+```
    lw $s0, 44         #Loads the value 44 into saved variables register 0
    lw $s1, -37        #Loads the value -37 into saved variables register 1
    addi $s2, $s0, $s1 #Adds the contents of saved variables registers 0 and 1 and stores the result in register 2
