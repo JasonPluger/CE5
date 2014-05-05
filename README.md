@@ -30,4 +30,23 @@ The new waveform is shown below:
 After the second *addi* instruction was executed, -37 in hex appeared in mem location 17 (register $s1). The third signal is *add* and I know it performed correctly during the second iteration of my simulation because *instr* contains the hex-value that I assigned it in the testbench, *rd1* (read-data) contains the value loaded into register $s0(mem location 16) in the first *addi* instruction (44), *rd2* contains the value loaded into register $s1(mem location 17) in the second *addi* instruction(-37), *we3* is high allowing the values to be written to memory, and finally*aluout* and *wd3* both contain the sum of these values (-7) which is written to the destination register $s2(mem location 18). *sw* is the final instruction to be tested, and it operated correctly because *memwrite* is high thus allowing data to be written to memory. However *rd2* which controls what gets written to mem location 0x54 is “0” while *rd1* contains the value that I want to be written (7) which I believe is backwards; *rd2* should contain the value 7 and *rd1* shouldn’t matter.
 
 
+###Task 3
+######Add `ori` instruction to MIPS implementation:
+Below is the new table of operations in the order they will be carried out:
+|  Assembly Code  | Machine Code, Binary  | Machine Code, Hex  |
+|-----------------|-----------------------|--------------------|
+| addi $s0, 44($0)|00100000000100000000000000101100| 0x2010002C|
+|addi $s1, -37($0)|00100000000100010000000000100101| 0x2011FFDB|
+|add $s2, $s0, $s1|00000010001100001001000000100000| 0x02309020|
+|ori $S3, $S2, x8000|  |  |
+|sw $s2, 0x54($0) |10101110010000000000000001010100| 0xAE400054|
+
+Below is the MIPS architechture schematic:
+![Schematic](https://github.com/JasonPluger/CE5/blob/master/CE5_Schematic.jpg "Schematic")
+
+
+Below is the Decoder tables showing values that will be used for `ori` operation:
+![Decoder Tables](https://github.com/JasonPluger/CE5/blob/master/CE5_DecoderValues.jpg "Decoder Tables")
+
+
 Documentation: 29 Apr 14: C3C Bolinger explained the L36 material to me because I was gone for a doctor's appointment during class. This then led into a discussion of the objectives of CE5 Task 1; C3C Bolinger was having trouble figuring out the syntax/how to store a value, so I found the information I ended up using on this website: http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html.
