@@ -33,13 +33,16 @@ After the second *addi* instruction was executed, -37 in hex appeared in mem loc
 ###Task 3
 ######Add `ori` instruction to MIPS implementation:
 Below is the new table of operations in the order they will be carried out:
+
+
 |  Assembly Code  | Machine Code, Binary  | Machine Code, Hex  |
 |-----------------|-----------------------|--------------------|
 | addi $s0, 44($0)|00100000000100000000000000101100| 0x2010002C|
 |addi $s1, -37($0)|00100000000100010000000000100101| 0x2011FFDB|
 |add $s2, $s0, $s1|00000010001100001001000000100000| 0x02309020|
-|ori $S3, $S2, x8000| 0 | 0 |
+|ori $S3, $S2, x8000| 0 | 0 | 0 |
 |sw $s2, 0x54($0) |10101110010000000000000001010100| 0xAE400054|
+
 
 Below is the MIPS architechture schematic:
 ![Schematic](https://github.com/JasonPluger/CE5/blob/master/CE5_Schematic.jpg?raw=true "Schematic")
