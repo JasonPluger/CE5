@@ -112,6 +112,9 @@ BEGIN
 		instr <= X"02309020"; --add $s2, $s0, $s1
 		wait for clk_period;
 		
+		instr <= X"36538000"; --ori $s3, $s2, x8000
+		wait for clk_period;
+		
 		instr <= X"AE400054"; --sw $s2, 0x54($0)
 		wait for clk_period;
 
