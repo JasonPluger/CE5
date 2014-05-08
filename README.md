@@ -53,6 +53,7 @@ Below is the Decoder tables showing values that will be used for `ori` operation
 
 Finally, the waveform shown below is a simulation of the `ori` instruction (shown from 230ns - 240ns)
 ![Waveform](https://github.com/JasonPluger/CE5/blob/master/Task3_waveform_oriInstruction.JPG?raw=true "Waveform")
+I know the waveform is correct because when looking at the time between 230-240ns when the `ori` instruction is executed, the `alusrc` signal is `11` which is what I programmed it to be so that the multiplexer that chooses between Sign Extend and Zero Extend is 1, and the multiplexer that chooses between the immediate value and a register chooses the immediate value. Furthermore, the `aluout` and `result` signals are both `0x00008007` which is indeed the value received from OR'ing x8000 and x0007. 
 
 
 Documentation: 29 Apr 14: C3C Bolinger explained the L36 material to me because I was gone for a doctor's appointment during class. This then led into a discussion of the objectives of CE5 Task 1; C3C Bolinger was having trouble figuring out the syntax/how to store a value, so I found the information I ended up using on this website: http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html.
