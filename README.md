@@ -44,12 +44,15 @@ Below is the new table of operations in the order they will be carried out:
 |sw $s2, 0x54($0) |10101110010000000000000001010100| 0xAE400054|
 
 
-Below is the MIPS architechture schematic:
-![Schematic](https://github.com/JasonPluger/CE5/blob/master/CE5_Schematic.jpg?raw=true "Schematic")
+Below is the MIPS architechture schematic with the added functionality of `ori` operation:
+![Schematic](https://github.com/JasonPluger/CE5/blob/master/ExtendedFuncSchematic.jpg?raw=true "Schematic")
 
 
 Below is the Decoder tables showing values that will be used for `ori` operation:
 ![Decoder Tables](https://github.com/JasonPluger/CE5/blob/master/CE5_DecoderValues.jpg?raw=true "Decoder Tables")
+
+Finally, the waveform shown below is a simulation of the `ori` instruction (shown from 230ns - 240ns)
+![Waveform](https://github.com/JasonPluger/CE5/blob/master/Task3_waveform_oriInstruction.JPG?raw=true "Waveform")
 
 
 Documentation: 29 Apr 14: C3C Bolinger explained the L36 material to me because I was gone for a doctor's appointment during class. This then led into a discussion of the objectives of CE5 Task 1; C3C Bolinger was having trouble figuring out the syntax/how to store a value, so I found the information I ended up using on this website: http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html.
